@@ -1,14 +1,17 @@
 - name: create tmp dir
-  file: path="{{ awesome_build_dir }}"
-        state=directory
+  file:
+    path="{{ awesome_build_dir }}"
+    state=directory
 
 - name: download awesome source
-  get_url: url="{{ awesome_source }}"
-           dest="{{ awesome_build_dir }}.tar.bz2"
-           mode=0775
-           validate_certs=no
+  get_url:
+    url="{{ awesome_source }}"
+    dest="{{ awesome_build_dir }}.tar.bz2"
+    mode=0775
+    validate_certs=no
 
 - name: untar awesome source
-  unarchive: src="{{ awesome_build_dir }}.tar.bz2"
-             dest="{{ awesome_build_dir }}"
-             mode=0775
+  unarchive:
+    src="{{ awesome_build_dir }}.tar.bz2"
+    dest="{{ awesome_build_dir }}"
+    mode=0775

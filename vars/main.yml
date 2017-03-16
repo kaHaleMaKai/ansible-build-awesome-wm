@@ -1,3 +1,3 @@
-awesome_source: "https://awesome.naquadah.org/download/awesome-{{ awesome_version }}.tar.bz2"
+awesome_source: "https://github.com/awesomeWM/awesome-releases/raw/master/awesome-{{ awesome_version }}.tar.bz2"
 
 awesome_full_build_dir: "{{ awesome_build_dir }}/awesome-{{ awesome_version }}"

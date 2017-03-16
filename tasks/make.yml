@@ -12,14 +12,17 @@
   args:
     chdir: "{{ awesome_full_build_dir }}"
 
-- name: install awesome
-  command: make install
-  sudo: yes
+- name: make a package
+  command: make package
   args:
     chdir: "{{ awesome_full_build_dir }}"
 
+- name: install awesome
+  become: yes
+  apt:
+    deb: "{{ awesome_full_build_dir }}/awesome-{{ awesome_version }}.deb"
+
 - name: remove source files
-  tags: awe
   file: path="{{ item }}"
         state=absent
   with_items:

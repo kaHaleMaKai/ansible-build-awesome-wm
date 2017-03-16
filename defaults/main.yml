@@ -2,7 +2,7 @@ awesome_force_install: no
 awesome_installed:
   rc: 0
 
-awesome_version: 3.5.9
+awesome_version: 4.0
 awesome_build_dir: /tmp/awesome
 awesome_config_dir: "{{ ansible_user_dir }}/.config/awesome"
 awesome_theme_dir: "{{ ansible_user_dir }}/.config/awesome/themes"
