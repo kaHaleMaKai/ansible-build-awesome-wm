@@ -1,11 +1,13 @@
+---
+
 - name: check if awesome has been installed
   shell: |
-    if [ {{ awesome_force_install }}]; then
+    if {{ "true" if awesome_force_install else "false" }}; then
       exit 1
     else
-      type awesome >/dev/null 2>&1
-      && awesome --version
-      | grep -F "v{{ awesome_version }}"
+      type awesome >/dev/null 2>&1 \
+      && awesome --version \
+      | grep -F "v{{ awesome_version }}" \
       >/dev/null 2>&1
     fi
   changed_when: false
