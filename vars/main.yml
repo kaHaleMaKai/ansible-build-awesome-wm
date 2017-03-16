@@ -1,3 +1,37 @@
+awesome_version: 4.0
+
+awesome_deps:
+  - cmake
+  - lua5.2
+  - liblua5.2-dev
+  - lua-lgi-dev
+  - imagemagick
+  - x11proto-core-dev
+  - libx11-xcb-dev
+  - libxcb-randr0-dev
+  - libxcb-xtest0-dev
+  - libxcb-xinerama0-dev
+  - libxcb-shape0-dev
+  - libxcb-cursor-dev
+  - libxcb-util-dev
+  - libxcb-keysyms1-dev
+  - libxcb-icccm4-dev
+  - libxkbcommon-x11-dev
+  - libstartup-notification0-dev
+  - libcairo2-dev
+  - libpango-1.0-0-dev
+  - libpangocairo-1.0-0-dev
+  - libglib2.0-dev
+  - libgio2.0-dev
+  - libgdk-pixbuf2.0-dev
+  - libxdg-basedir-dev
+  - libxcb-image0-dev
+  - libxcb-util0-dev
+  - libdbus-1-dev
+  - asciidoc
+  - xmlto
+  - xmltoman
+
 awesome_source: "https://github.com/awesomeWM/awesome-releases/raw/master/awesome-{{ awesome_version }}.tar.bz2"
 
 awesome_full_build_dir: "{{ awesome_build_dir }}/awesome-{{ awesome_version }}"

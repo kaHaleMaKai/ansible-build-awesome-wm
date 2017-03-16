@@ -2,28 +2,8 @@ awesome_force_install: no
 awesome_installed:
   rc: 0
 
-awesome_version: 4.0
 awesome_build_dir: /tmp/awesome
 awesome_config_dir: "{{ ansible_user_dir }}/.config/awesome"
 awesome_theme_dir: "{{ ansible_user_dir }}/.config/awesome/themes"
-awesome_deps:
-  - cmake
-  - liblua5.2-dev
-  - imagemagick
-  - libxcb-randr0-dev
-  - libxcb-xtest0-dev
-  - libxcb-xinerama0-dev
-  - libxcb-shape0-dev
-  - libxcb-keysyms1-dev
-  - libxcb-icccm4-dev
-  - libx11-xcb-dev
-  - lua-lgi-dev
-  - libstartup-notification0-dev
-  - libxdg-basedir-dev
-  - libxcb-image0-dev
-  - libxcb-util0-dev
-  - libgdk-pixbuf2.0-dev
-  - lua5.2
-  - libxcb-cursor-dev
-  - libcairo2-dev
-  - libdbus-1-dev
+
+# maybe xcb-util-xrm is missing
