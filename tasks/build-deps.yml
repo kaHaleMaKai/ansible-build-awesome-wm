@@ -1,0 +1,8 @@
+- name: install awesomes build dependencies
+  apt:
+    name="{{ item }}"
+     update_cache=no
+     state=present
+  become: yes
+  with_items:
+    - "{{ awesome_deps }}"

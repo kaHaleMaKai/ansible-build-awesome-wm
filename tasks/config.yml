@@ -1,0 +1,25 @@
+- name: create config dir for awesome under home dir
+  file: path="{{ awesome.config_path }}"
+        state=directory
+
+- name: copy awesome config files into newly created config dir
+  copy: src="{{ item.src }}"
+        dest="{{ item.dest | default(awesome.config_path) }}"
+        owner="{{ item.owner | default(ansible_user_id) }}"
+        group="{{ item.group | default(ansible_user_id) }}"
+        mode="{{ item.mode | default('0664') }}"
+  sudo: yes
+  with_items:
+    -  src: /usr/local/share/xsessions/awesome.desktop
+       dest: /usr/share/xsessions/awesome.desktop
+       owner: root
+       group: root
+    - src: icons
+    - src: lib
+    - src: themes
+
+- name: copy template rc.lua into awesome dir
+  tags: awesome.rc
+  template: src=rc.lua.j2
+            dest="{{ awesome.config_path }}/rc.lua"
+            mode=0664
